@@ -19,6 +19,7 @@
   "homepage": "https://github.com/maximx1/newsfeed#readme",
   "dependencies": {
     "feedparser": "^2.2.1",
+    "request": "^2.81.0",
     "mongodb": "^2.2.31"
   },
   "devDependencies": {
