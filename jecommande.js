@@ -8,4 +8,6 @@ var feeds = [
   { source: "reddit technews", url: "https://www.reddit.com/r/technews/.rss"}
 ];
 
-FeedInputManager.pullFeeds(feeds);
+FeedInputManager.pullFeeds(feeds, function(result) {
+  console.log(result);
+});

@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
-var api = require('app-api.js');
+var api = require('./src/controllers/app-api.js');
+
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   res.send('Hello World!');
