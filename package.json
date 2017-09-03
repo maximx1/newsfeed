@@ -1,0 +1,30 @@
+{
+  "name": "newsfeed",
+  "version": "1.0.0",
+  "description": "RSS consolidator + display",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximx1/newsfeed.git"
+  },
+  "author": "Justin Walrath <walrathjaw@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximx1/newsfeed/issues"
+  },
+  "homepage": "https://github.com/maximx1/newsfeed#readme",
+  "dependencies": {
+    "feedparser": "^2.2.1",
+    "mongodb": "^2.2.31"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "serial-mocha": "*",
+    "chai": "*",
+    "mongo-unit": "^1.0.3"
+  }
+}
