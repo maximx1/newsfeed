@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/maximx1/newsfeed#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
     "feedparser": "^2.2.1",
-    "request": "^2.81.0",
-    "mongodb": "^2.2.31"
+    "mongodb": "^2.2.31",
+    "pug": "^2.0.0-rc.3",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "mocha": "*",

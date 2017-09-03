@@ -3,7 +3,7 @@ var storage = new Storage();
 var FeedRetrieval = require("../data/feedRetrieval.js");
 
 module.exports = {
-  pullFeeds: function(feeds) {
+  pullFeeds: function(feeds, callback) {
     feeds.forEach(function(x) {
       FeedRetrieval.pullFeed(x.source, x.url, function(item) {
         storage.dumpFeedEntry(item, function(result) {
@@ -11,5 +11,6 @@ module.exports = {
         })
       });
     });
+    callback("successfully initiated feed loading")
   }
 }

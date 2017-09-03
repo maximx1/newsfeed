@@ -1,0 +1,122 @@
+{
+	"variables": [],
+	"info": {
+		"name": "newsfeed",
+		"_postman_id": "781e022e-ca2a-9ca4-8805-cdbb2945fd11",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Feed: Vox",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"vox\", \"url\": \"https://www.vox.com/rss/index.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: arstechnica",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"arstechnica\", \"url\": \"http://feeds.arstechnica.com/arstechnica/index/\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: anandtech",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"anandtech\", \"url\": \"http://www.anandtech.com/rss/\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: engadget",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"engadget\", \"url\": \"http://engadget.com/rss.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: reddit technews",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"reddit technews\", \"url\": \"https://www.reddit.com/r/technews/.rss\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Poll, pull, and load feeds",
+			"request": {
+				"url": "{{base_url}}/api/feeds/pull",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -8,7 +8,7 @@ module.exports = {
       var collection = db.collection(primaryCollectionName);
       collection.updateOne(entry, { $set : entry }, { upsert: true },
         function(err, result) {
-          // Error logging
+          // TODO: Error logging
           db.close();
           callback(result);
         }
@@ -21,10 +21,23 @@ module.exports = {
     MongoClient.connect(this.url || mongoURI, function(err, db) {
       var collection = db.collection(primaryCollectionName);
       collection.find({}).count(function(err, result) {
-        // Error logging
+        // TODO: Error logging
+        db.close();
+        callback(result);
+      });
+    });
+  },
+
+  findAll: function(callback) {
+    primaryCollectionName = this.primaryCollectionName;
+    MongoClient.connect(this.url || mongoURI, function(err, db) {
+      var collection = db.collection(primaryCollectionName);
+      collection.find({}).toArray(function(err, result) {
+        // TODO: Error logging
         db.close();
         callback(result);
       });
     });
   }
+
 }
