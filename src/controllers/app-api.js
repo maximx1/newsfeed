@@ -1,6 +1,11 @@
 var FeedInputManager = require("../pipeline/feedInputManager.js");
+
+var Storage = require("../data/storage.js");
+var storage = new Storage();
+
 var FeedConfig = require("../data/feedConfig.js");
 var feedConfig = new FeedConfig();
+
 
 module.exports = {
   init: function(app) {
@@ -14,7 +19,6 @@ module.exports = {
     });
 
     app.put('/api/feeds/add', function(req, res) {
-      console.log(req.body);
       var data = { source: req.body.source, url: req.body.url };
       feedConfig.add(data, function(result) {
         if(result.result.upserted) {
@@ -22,6 +26,18 @@ module.exports = {
         } else {
           res.json({status: "ok", message: "Source already exists"});
         }
+      });
+    });
+
+    app.get('/api/feeds', function(req, res) {
+      feedConfig.findAll(function(feeds) {
+        res.json({status: "ok", message: feeds});
+      });
+    });
+
+    app.get('/api/feeds/counts', function(req, res) {
+      storage.getCountBySource(function(counts) {
+        res.json({status: "ok", message: counts});
       });
     });
 

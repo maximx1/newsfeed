@@ -26,7 +26,7 @@ var load = {
 }
 
 describe("storage", function() {
-  describe("#dumpFeedEntry()", function() {
+  describe("#add()", function() {
     var storage;
 
     before(function() {
@@ -42,22 +42,22 @@ describe("storage", function() {
     });
 
     it("should be able to store a new feed entry", function() {
-      storage.dumpFeedEntry(sampleFeed2, function(result) {
+      storage.add(sampleFeed2, function(result) {
         expect(result.result.upserted).to.not.be.empty;
       });
     });
 
     it("should be able to store multiple entries", function() {
-      storage.dumpFeedEntry(sampleFeed3, function(firstResult) {
+      storage.add(sampleFeed3, function(firstResult) {
         expect(firstResult.result.upserted).to.not.be.empty;
-        storage.dumpFeedEntry(sampleFeed4, function(secondResult) {
+        storage.add(sampleFeed4, function(secondResult) {
           expect(secondResult.result.upserted).to.not.be.empty;
         });
       });
     });
 
     it("should fail to upsert a feed if it already exists", function() {
-      storage.dumpFeedEntry(sampleFeed1, function(firstResult) {
+      storage.add(sampleFeed1, function(firstResult) {
         expect(firstResult.result.upserted).to.be.undefined;
       });
     });
