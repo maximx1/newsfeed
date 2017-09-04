@@ -7,7 +7,7 @@ function Storage(url) {
   this.add = function(entry, callback) {
     MongoClient.connect(this.url || mongoURI, function(err, db) {
       var collection = db.collection("feeds");
-      collection.updateOne(entry, { $set : entry }, { upsert: true },
+      collection.updateOne({"link": entry.link, "newsfeed-source": entry["newsfeed-source"], "pubdate": entry.pubdate}, { $set : entry }, { upsert: true },
         function(err, result) {
           // TODO: Error logging
           db.close();
@@ -49,6 +49,17 @@ function Storage(url) {
           callback(result);
         }
       );
+    });
+  };
+
+  this.findAllByDate = function(limit, skip, callback) {
+    MongoClient.connect(this.url || mongoURI, function(err, db) {
+      var collection = db.collection("feeds");
+      collection.find({}).sort({"pubdate":-1}).skip(skip).limit(limit).toArray(function(err, result) {
+        // TODO: Error logging
+        db.close();
+        callback(result);
+      });
     });
   };
 

@@ -3,7 +3,7 @@ $(document).ready(function() {
     if(data.status === "ok") {
       var html = "<ul>";
       data.message.forEach(function(x) {
-        html += "<li>source: " + x.source + ", url: " + x.url + "</li>";
+        html += "<li id='" + x._id + "'><span class='feed-source'>" + x.source + "</span><span class='feed-url'>url: " + x.url + "</span></li>";
       })
       html += "</ul>";
       $("#sources-pane").html(html);

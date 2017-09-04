@@ -41,5 +41,13 @@ module.exports = {
       });
     });
 
+    app.get('/api/feeds/query/bydate', function(req, res) {
+      var limit = Math.min(Number(req.query.limit) || 15, 200);
+      var skip = Number(req.query.skip) || 0;
+      storage.findAllByDate(limit, skip, function(results) {
+        res.json({status: "ok", message: results});
+      });
+    });
+
   }
 };
