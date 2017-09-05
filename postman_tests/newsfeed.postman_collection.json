@@ -8,6 +8,65 @@
 	},
 	"item": [
 		{
+			"name": "Poll, pull, and load feeds",
+			"request": {
+				"url": "{{base_url}}/api/feeds/pull",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Query Sources",
+			"request": {
+				"url": "{{base_url}}/api/feeds",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Query Feeds by date",
+			"request": {
+				"url": {
+					"raw": "{{base_url}}/api/feeds/query/bydate?limit=1&skip=2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"feeds",
+						"query",
+						"bydate"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "skip",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Add Feed: Vox",
 			"request": {
 				"url": "{{base_url}}/api/feeds/add",
@@ -108,12 +167,141 @@
 			"response": []
 		},
 		{
-			"name": "Poll, pull, and load feeds",
+			"name": "Add Feed: NYT science",
 			"request": {
-				"url": "{{base_url}}/api/feeds/pull",
-				"method": "GET",
-				"header": [],
-				"body": {},
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"NYT science\", \"url\": \"http://rss.nytimes.com/services/xml/rss/nyt/Science.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: NYT jobs",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"NYT jobs\", \"url\": \"http://www.nytimes.com/services/xml/rss/nyt/JobMarket.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: NYT tech",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"NYT tech\", \"url\": \"http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: NYT world",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"NYT world\", \"url\": \"http://rss.nytimes.com/services/xml/rss/nyt/World.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: NYT auto",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"NYT auto\", \"url\": \"http://rss.nytimes.com/services/xml/rss/nyt/Automobiles.xml\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: RS music",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"RS Music\", \"url\": \"http://www.rollingstone.com/music/rss\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feed: Phoronix",
+			"request": {
+				"url": "{{base_url}}/api/feeds/add",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"source\": \"Phoronix\", \"url\": \"http://www.phoronix.com/rss.php\" }"
+				},
 				"description": ""
 			},
 			"response": []
