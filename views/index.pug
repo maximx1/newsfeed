@@ -1,10 +1,14 @@
 html
   head
     title= config
-    link(rel="stylesheet", href="static/styles/config.css")
+    link(rel="stylesheet", href="static/styles/index.css")
     link(rel="stylesheet", href="static/styles/common.css")
   body
-    div(id="feeds-pane")
-      div(class="loader")
+    div(class="navbar")
+    div(class="navbar-placeholder")
+    div(class="main-container center-h")
+      div(id="feeds-pane")
+        div(class="loader")
     script(type="text/javascript", src="static/lib/jquery.min.js")
+    script(type="text/javascript", src="static/lib/moment.min.js")
     script(type="text/javascript", src="static/scripts/index.js")

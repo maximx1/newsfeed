@@ -1,0 +1,30 @@
+.date-badge {
+  background-color: FFCE00;
+  padding: 1em;
+  width: 1.5em;
+  height: 2.5em;
+}
+
+.info-pane {
+  padding: .5em;
+  margin-bottom: .2em;
+}
+
+.collapsed-info-pane {
+  height: 3.5em;
+  width: calc(100% - 5em);
+  overflow: hidden;
+}
+
+.source-text {
+  font-weight: bold;
+  font-size: 115%;
+}
+
+.time-text {
+  font-size: 75%;
+}
+
+.info-pane a {
+  text-decoration: none;
+}

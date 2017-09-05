@@ -1,11 +1,11 @@
 $(document).ready(function() {
   $.getJSON("api/feeds", function(data) {
     if(data.status === "ok") {
-      var html = "<ul>";
+      var html = "";
       data.message.forEach(function(x) {
-        html += "<li id='" + x._id + "'><span class='feed-source'>" + x.source + "</span><span class='feed-url'>url: " + x.url + "</span></li>";
+        html += "<div id='" + x._id + "' class='div-row width-100'><div class='feed-source div-row-item'>" + x.source + "</div><div class='feed-url div-row-item'>url: " + x.url + "</div></div>";
       })
-      html += "</ul>";
+      html += "";
       $("#sources-pane").html(html);
     }
   });

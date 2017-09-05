@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8096;
 var api = require('./src/controllers/app-api.js');
 var web = require('./src/controllers/web.js');
 
