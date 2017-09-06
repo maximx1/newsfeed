@@ -6,6 +6,8 @@ var storage = new Storage();
 var FeedConfig = require("../data/feedConfig.js");
 var feedConfig = new FeedConfig();
 
+var FeedFilterConfig = require("../data/feedFilterConfig.js");
+var feedFilterConfig = new FeedFilterConfig();
 
 module.exports = {
   init: function(app) {
@@ -45,6 +47,18 @@ module.exports = {
       var limit = Math.min(Number(req.query.limit) || 15, 200);
       var skip = Number(req.query.skip) || 0;
       storage.findAllByDate(limit, skip, function(results) {
+        res.json({status: "ok", message: results});
+      });
+    });
+
+    app.post('/api/filters/add', function(req, res) {
+      feedFilterConfig.add({filterKey: req.body.filterKey}, function(results) {
+        res.json({status: "ok", message: results});
+      });
+    });
+
+    app.get('/api/filters', function(req, res) {
+      feedFilterConfig.findAll(function(results) {
         res.json({status: "ok", message: results});
       });
     });
